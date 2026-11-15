@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>다 해봄</title>
+<meta name="description" content="재료 조합, 만들어 보기 전에 먼저 확인하세요. 어울림 점수, 완성 접시, 원가율까지 한 화면에서.">
+<meta property="og:type" content="website"><meta property="og:site_name" content="다 해봄">
+<meta property="og:title" content="다 해봄 · 메뉴 궁합 실험실"><meta property="og:description" content="재료 조합, 만들어 보기 전에 먼저 확인하세요. 어울림 점수, 완성 접시, 원가율까지 한 화면에서.">
+<meta property="og:image" content="https://dahaebom.vercel.app/img/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:url" content="https://dahaebom.vercel.app/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://dahaebom.vercel.app/img/og.png">
+<link rel="icon" type="image/png" href="img/favicon.png"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{--teal:#14dcc4;--teal-d:#22e3cb;--ink:#1d1f23}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:Pretendard,"Apple SD Gothic Neo",sans-serif;background:#111;color:#fff;word-break:keep-all;overflow:hidden}
+a{color:inherit;text-decoration:none}
+.slides{position:fixed;inset:0}
+.slides div{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.06);transition:opacity 1.6s ease,transform 7s linear}
+.slides div.on{opacity:1;transform:scale(1)}
+.shade{position:fixed;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.38) 45%,rgba(8,20,32,.82) 100%)}
+header{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:22px clamp(16px,7vw,110px);z-index:3}
+.logo{font-weight:900;font-size:21px;letter-spacing:-.04em;display:flex;align-items:center;gap:8px}
+.logo img{display:block;height:30px;width:auto}
+.logo i{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--teal);color:var(--ink);font-style:normal;font-size:13px}
+nav{display:flex;align-items:center;gap:28px;font-size:15px;font-weight:500}
+nav a:hover{opacity:.75}
+.cta-s{background:var(--teal);color:var(--ink);border-radius:3px;padding:10px 20px;font-weight:700}
+main{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 16px}
+h1{font-size:clamp(34px,5.4vw,64px);font-weight:300;letter-spacing:-.035em;line-height:1.2}
+h1 b{font-weight:800;color:#22e3cb}
+.sub{margin-top:18px;font-size:clamp(15px,1.5vw,19px);line-height:1.6;opacity:.92;max-width:620px}
+.go{margin-top:36px;background:var(--teal);color:var(--ink);font-size:18px;font-weight:700;border-radius:2px;padding:17px 52px;display:inline-block;transition:background .2s}
+.go:hover{background:var(--teal-d)}
+.note{margin-top:14px;font-size:13px;opacity:.65}
+.dots{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:3}
+.dots button{width:28px;height:3px;border:0;background:rgba(255,255,255,.35);cursor:pointer;padding:0}
+.dots button.on{background:#fff}
+.credit{position:fixed;right:clamp(16px,3vw,32px);bottom:22px;z-index:3;font-size:11px;opacity:.6;max-width:46vw;text-align:right}
+.credit a{text-decoration:underline}
+@media (max-width:700px){
+  nav a:not(.cta-s){display:none}
+  .go{padding:15px 36px}
+  .credit{left:16px;right:16px;max-width:none;text-align:center;bottom:52px}
+  .dots{bottom:24px}
+}
+</style>
+</head>
+<body>
+<div class="slides" id="slides"></div>
+<div class="shade"></div>
+
+<header>
+  <a class="logo" href="index.html" aria-label="다 해봄 처음으로"><img src="img/logo-white.png" alt="다 해봄" height="30"></a>
+</header>
+
+<main>
+  <h1>재료 조합, <b>만들어 보기 전에</b><br>먼저 확인하세요</h1>
+  <p class="sub">재료 · 요리 행위 · 수치를 이으면 어울림 점수, 가까운 메뉴,<br>완성 접시 그림과 원가율까지 한 화면에서 보여 드립니다.</p>
+  <a class="go" href="dahaebom?survey=1">조합 시작하기</a>
+  <p class="note">가입 없이 바로 써 볼 수 있어요</p>
+</main>
+
+<div class="dots" id="dots"></div>
+<p class="credit" id="credit"></p>
+
+<script>
+const PH=[
+ {src:'img/start1.jpg',by:'U.S. Army photo by Cpl. Hyung Ju Lee',lic:'Public domain',url:'https://commons.wikimedia.org/wiki/File:Eighth_Army_Chef_of_the_Year_competition_(9182185).jpg'},
+ {src:'img/start2.jpg',by:'Miomir Magdevski',lic:'CC BY-SA 4.0',url:'https://commons.wikimedia.org/wiki/File:Spices_on_Spice_Bazaar_in_Istanbul_03.jpg'},
+ {src:'img/start3.jpg',by:'Chloe Lim',lic:'CC BY 2.0',url:'https://commons.wikimedia.org/wiki/File:Bibimbap_6.jpg'},
+ {src:'img/start4.jpg',by:'Shixart1985',lic:'CC BY 2.0',url:'https://commons.wikimedia.org/wiki/File:Closeup_of_a_cup_of_latte_art_with_coffee_powder.jpg'}
+];
+const S=document.getElementById('slides'),D=document.getElementById('dots'),C=document.getElementById('credit');
+PH.forEach((p,i)=>{const d=document.createElement('div');d.style.backgroundImage=`url(${p.src})`;S.appendChild(d);
+  const b=document.createElement('button');b.setAttribute('aria-label',`사진 ${i+1}`);b.onclick=()=>{show(i);restart()};D.appendChild(b)});
+let cur=0,timer;
+function show(i){cur=i;[...S.children].forEach((d,k)=>d.classList.toggle('on',k===i));[...D.children].forEach((d,k)=>d.classList.toggle('on',k===i));
+  const p=PH[i];C.innerHTML=`사진: <a href="${p.url}" target="_blank" rel="noopener">${p.by}</a> · ${p.lic}`}
+function restart(){clearInterval(timer);timer=setInterval(()=>show((cur+1)%PH.length),5000)}
+show(0);restart();
+</script>
+</body>
+</html>

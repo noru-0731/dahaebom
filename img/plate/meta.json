@@ -1,0 +1,183 @@
+{
+ "note": "unitG = 보이는 조각 하나의 무게(g), cm = 조각의 긴 변(실제 크기). 그릇 cm = 안쪽 지름.",
+ "ing": {
+  "pork": [
+   25,
+   7
+  ],
+  "beef": [
+   20,
+   7
+  ],
+  "chicken": [
+   25,
+   4
+  ],
+  "bacon": [
+   12,
+   9
+  ],
+  "egg": [
+   50,
+   9
+  ],
+  "tofu": [
+   15,
+   2.5
+  ],
+  "shrimp": [
+   15,
+   6
+  ],
+  "squid": [
+   15,
+   5
+  ],
+  "clam": [
+   10,
+   4
+  ],
+  "kimchi": [
+   15,
+   5
+  ],
+  "onion": [
+   8,
+   5
+  ],
+  "scallion": [
+   3,
+   4
+  ],
+  "garlic": [
+   3,
+   1.8
+  ],
+  "chili": [
+   2,
+   1.5
+  ],
+  "potato": [
+   15,
+   2.5
+  ],
+  "carrot": [
+   6,
+   4
+  ],
+  "cabbage": [
+   8,
+   5
+  ],
+  "zucchini": [
+   8,
+   4
+  ],
+  "mushroom": [
+   6,
+   4
+  ],
+  "tomato": [
+   20,
+   4
+  ],
+  "spinach": [
+   5,
+   6
+  ],
+  "sprout": [
+   6,
+   6
+  ],
+  "cucumber": [
+   8,
+   3.5
+  ],
+  "lettuce": [
+   8,
+   9
+  ],
+  "basil": [
+   0.5,
+   3
+  ],
+  "tteok": [
+   20,
+   6
+  ],
+  "butter": [
+   10,
+   2.5
+  ],
+  "cheese": [
+   10,
+   4
+  ],
+  "chocolate": [
+   8,
+   2.5
+  ],
+  "gochugaru": [
+   3,
+   3
+  ],
+  "rice": [
+   210,
+   10
+  ],
+  "pasta": [
+   100,
+   12
+  ],
+  "ramen": [
+   110,
+   11
+  ],
+  "somyeon": [
+   100,
+   11
+  ],
+  "dangmyeon": [
+   60,
+   11
+  ],
+  "batter": [
+   150,
+   15
+  ],
+  "custard": [
+   150,
+   10
+  ]
+ },
+ "vessel": {
+  "ttuk": 15,
+  "noodle": 18,
+  "bowl": 18,
+  "plate": 22,
+  "pan": 24,
+  "fryplate": 20,
+  "salad": 20,
+  "board": 28,
+  "mixbowl": 24,
+  "pot": 22,
+  "steamer": 22,
+  "grillpan": 24,
+  "fryer": 22
+ },
+ "states": [
+  "raw",
+  "boiled",
+  "cooked",
+  "fried",
+  "charred"
+ ],
+ "texture": [
+  "clear",
+  "red",
+  "doenjang",
+  "cream",
+  "curry",
+  "chocolate"
+ ]
+}

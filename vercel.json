@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/dahaebom", "destination": "/pairing.html" },
+    { "source": "/%EB%8B%A4%ED%95%B4%EB%B4%84", "destination": "/pairing.html" }
+  ],
+  "redirects": [
+    { "source": "/pairing.html", "destination": "/dahaebom", "permanent": false },
+    { "source": "/pairing", "destination": "/dahaebom", "permanent": false }
+  ]
+}
